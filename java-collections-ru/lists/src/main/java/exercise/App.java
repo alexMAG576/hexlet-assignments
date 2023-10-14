@@ -6,17 +6,19 @@ import java.util.List;
 
 // BEGIN
 public class App {
-    public static boolean scrable(String randomChar, String word) {
-        randomChar = randomChar.toLoverCase();
+    public static boolean scrabble(String randomChar, String word) {
         word = word.toLowerCase();
         List<Character> charList = new ArrayList<>();
         for (char c : randomChar.toCharArray()) {
             charList.add(c);
         }
         for (char c : word.toCharArray()) {
-                randomChar.containsAll(Collection<word> c);
+            if (!charList.contains(c)) {
+                return false;
+            }
+            charList.remove(Character.valueOf(c));
         }
-        return false;
+        return true;
     }
 }
 
