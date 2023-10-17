@@ -9,7 +9,7 @@ import java.util.Map.Entry;
 public class App {
     public static List<Map<String, String>> findWhere(List<Map<String, String>> books, Map<String, String> params) {
         List<Map<String, String>> findWhere = new ArrayList<>();
-        for (Map<String, String>book : books) {
+        for (Map<String, String> book : books) {
             boolean match = true;
 
             for (Map.Entry<String, String> entry : params.entrySet()) {
