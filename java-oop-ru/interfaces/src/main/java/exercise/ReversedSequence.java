@@ -1,30 +1,30 @@
 package exercise;
 
 // BEGIN
-public class ReversedSequence implements CharSequence {
-    private String sequence;
-    public ReversedSequence(String sequence) {
-        this.sequence = sequence;
+class ReversedSequence implements CharSequence {
+    private String text;
+
+    ReversedSequence(String text) {
+        StringBuilder s  = new StringBuilder(text);
+        this.text = s.reverse().toString();
     }
+
     public int length() {
-        return sequence.length();
+        return text.length();
     }
+
     public char charAt(int index) {
-        return sequence.charAt(sequence.length() - 1 - index);
+
+        return text.charAt(index);
     }
+
     public CharSequence subSequence(int start, int end) {
-        StringBuilder sb = new StringBuilder();
-        for (int i = end -1; i >= 0; i--) {
-            sb.append(sequence.charAt(i));
-        }
-        return sb.toString();
+        return text.subSequence(start, end);
     }
+
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        for(int i = sequence.length() - 1; i >= 0; i--) {
-            sb.append(sequence.charAt(i));
-        }
-        return sb.toString();
+        return text;
     }
+
 }
 // END
