@@ -16,15 +16,15 @@ public class Flat implements Home {
         return area + balconyArea;
     }
     public int compareTo(Home other) {
-        if (this.getArea() < other.getArea()) {
-            return  -1;
-        } else if (this.getArea() > other.getArea()) {
+        if (this.getArea() == another.getArea()) {
+            return  0;
+        } else if (this.getArea() > another.getArea()) {
             return 1;
         }
-        return 0;
+        return -1;
     }
     public String toString() {
-        return "Квартира площадью " + getArea() + " метров на " + floor + " этаже";
+        return String.format("Квартира площадью " + getArea() + " метров на " + floor + " этаже");
     }
 }
 // END
