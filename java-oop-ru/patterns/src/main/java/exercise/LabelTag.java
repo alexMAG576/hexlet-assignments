@@ -14,7 +14,7 @@ public class LabelTag implements TagInterface {
         return text;
     }
     public String render() {
-        return "<label>" + text + inputTag.render() +"</label>";
+        return "<label>" + text + inputTag.render() + "</label>";
     }
 }
 // END
