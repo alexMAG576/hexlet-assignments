@@ -7,9 +7,6 @@ public class Circle {
 
     public Circle(Point point, int radius) {
         this.point = point;
-        if (radius < 0) {
-            throw new NegativeRadiusException();
-        }
         this.radius = radius;
     }
 
@@ -20,8 +17,11 @@ public class Circle {
     public int getRadius() {
         return radius;
     }
-    public double getSquare() {
-        return radius * radius * Math.PI;
+    public double getSquare() throws NegativeRadiusException {
+        if (this.getRadius() < 0) {
+            throw new NegativeRadiusException("Radius can not be negative");
+        }
+        return Math.pow(radius, 2) * Math.PI;
     }
 }
 // END

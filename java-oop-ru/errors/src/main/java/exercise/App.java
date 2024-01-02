@@ -2,13 +2,15 @@ package exercise;
 
 // BEGIN
 class App {
-    public static int printSquare(Circle circle) throws NegativeRadiusException {
-        if (circle.getRadius() < 0) {
-            throw new NegativeRadiusException("Не удалось посчитать площадь");
+    public static void printSquare(Circle circle) {
+        try {
+            double square = circle.getSquare();
+            System.out.println(Math.round(square));
+        } catch (NegativeRadiusException e) {
+            System.out.println("Не удалось посчитать площадь");
+        } finally {
+            System.out.println("Вычисление окончено");
         }
-        int squareCircle = (int) circle.getSquare();
-        System.out.println(squareCircle);
-        System.out.println("Вычисление окончено");
     }
 }
 // END

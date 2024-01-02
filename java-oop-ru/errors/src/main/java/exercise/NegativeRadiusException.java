@@ -2,8 +2,8 @@ package exercise;
 
 // BEGIN
 class NegativeRadiusException extends Exception {
-    public NegativeRadiusException(String massage) {
-        super(massage);
+    public NegativeRadiusException(String msg) {
+        super(msg);
     }
 
 }
