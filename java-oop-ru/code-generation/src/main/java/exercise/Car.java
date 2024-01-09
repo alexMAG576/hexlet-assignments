@@ -19,7 +19,8 @@ class Car {
         String jsonRepresentation = objectMapper.writeValueAsString(this);
         return jsonRepresentation;
     }
-    public String unserialize(String jsonRepresentation) throws Exception {
+
+    public static Car unserialize(String jsonRepresentation) throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.readValue(jsonRepresentation, Car.class);
     }
