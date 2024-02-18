@@ -13,7 +13,7 @@ public final class App {
             config.plugins.enableDevLogging();
         });
         // Описываем, что загрузится по адресу /
-        app.get("/welcome", ctx -> ctx.result("Welcome to Hexlet! new"));
+        app.get("/welcome", ctx -> ctx.result("Welcome to Hexlet!"));
         return app; // Стартуем веб-сервер
         // END
     }
