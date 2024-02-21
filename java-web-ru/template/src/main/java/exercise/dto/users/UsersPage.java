@@ -10,6 +10,6 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public class UsersPage {
-    private List<Users> users;
+    private List<User> users;
 }
 // END
