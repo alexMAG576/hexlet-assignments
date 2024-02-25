@@ -28,13 +28,18 @@ public final class App {
         });
 
         // BEGIN
-        app.post("/users", ctx -> {
-            var firstName = ctx.formParam("firstName").capitalize();
-            var lastName = ctx.formParam("lastName").capitalize();
-            var email = ctx.formParam("email").trim().toLowerCase();
-            var password = ctx.formParam("password").encrypt();
+        app.get("users/build", ctx -> {
+            ctx.render("users/build.jte");
+        });
 
-            var user = new User(firstName, lastName, email, password);
+        app.post("/users", ctx -> {
+            var firstName = StringUtils.capitalize(ctx.formParam("firstName"));
+            var lastName = StringUtils.capitalize(ctx.formParam("lastName"));
+            var email = ctx.formParam("email").trim().toLowerCase();
+            var password = ctx.formParam("password");
+            var encryptedPassword = Security.encrypt(password);
+
+            var user = new User(firstName, lastName, email, encryptedPassword);
             UserRepository.save(user);
             ctx.redirect("/users");
         });
