@@ -1,4 +1,4 @@
-@import example.hexlet.dto.articles.BuildArticlePage
+@import exercise.dto.articles.BuildArticlePage
 @param BuildArticlePage page
 
 @template.layout.page(
