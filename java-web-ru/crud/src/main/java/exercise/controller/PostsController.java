@@ -41,6 +41,6 @@ public class PostsController {
 
         var page = new PostPage(post);
         ctx.render("posts/show.jte", Collections.singletonMap("page", page));
-    }`
+    }
     // END
 }
