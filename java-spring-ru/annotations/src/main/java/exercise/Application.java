@@ -12,7 +12,7 @@ public class Application {
         for (Method method : Address.class.getDeclaredMethods()) {
             if (method.isAnnotationPresent(Inspect.class)) {
                 var name = method.getName();
-                var nameClass = method.class.getName();
+                var nameClass = method.getClass();
                 System.out.println("Method " + name + " returns a value of type " + nameClass + ".");
             }
         }
