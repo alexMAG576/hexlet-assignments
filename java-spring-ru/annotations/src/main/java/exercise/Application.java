@@ -13,7 +13,7 @@ public class Application {
             if (method.isAnnotationPresent(Inspect.class)) {
                 var name = metod.getName();
                 var nameClass = metod.class.getName();
-                System.out.println("Method " + name + " returns a value of type " + nameClass + ".")
+                System.out.println("Method " + name + " returns a value of type " + nameClass + ".");
             }
         }
         // END
