@@ -9,7 +9,7 @@ public class Application {
         var address = new Address("London", 12345678);
 
         // BEGIN
-        for (Method method : SomeService.class.getDeclaredMethods()) {
+        for (Method method : Address.class.getDeclaredMethods()) {
             if (method.isAnnotationPresent(Inspect.class)) {
                 var name = method.getName();
                 var nameClass = method.class.getName();
