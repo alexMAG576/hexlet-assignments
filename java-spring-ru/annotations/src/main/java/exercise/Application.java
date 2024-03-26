@@ -9,10 +9,10 @@ public class Application {
         var address = new Address("London", 12345678);
 
         // BEGIN
-        for (Method metod : SomeService.class.getDeclaredMethods()) {
+        for (Method method : SomeService.class.getDeclaredMethods()) {
             if (method.isAnnotationPresent(Inspect.class)) {
-                var name = metod.getName();
-                var nameClass = metod.class.getName();
+                var name = method.getName();
+                var nameClass = method.class.getName();
                 System.out.println("Method " + name + " returns a value of type " + nameClass + ".");
             }
         }
